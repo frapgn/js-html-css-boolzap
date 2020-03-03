@@ -1,0 +1,39 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.clearfix::after {
+    content: '';
+    display: table;
+    clear: both;
+}
+
+.container {
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+}
+
+.container-top {
+    height: 20vh;
+    background-color: #128C7E;
+}
+
+.container-bottom {
+    height: 80vh;
+    background-color: #f0f0f0;
+}
+
+.chat-container {
+    height: 90%;
+    min-height: 500px;
+    width: 70%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    /* da eliminare */
+    background-color: black;
+}
