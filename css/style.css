@@ -10,6 +10,10 @@
     clear: both;
 }
 
+body {
+    font-family: sans-serif;
+}
+
 .container {
     position: relative;
     height: 100vh;
@@ -42,25 +46,113 @@
 
 /* LEFT COLUMN */
 .left-column {
-    flex: 30%;
+    flex: 0 0 30%;
     display: flex;
     flex-direction: column;
     border-right: 1px solid #d6d6d6;
 }
 
+/* ********************* */
+
 .main-user-bar {
+    display: flex;
+    justify-content: space-between;
     height: 50px;
     background-color: #eaeaea;
 }
 
+.main-user-avatar {
+    width: 50px;
+    height: 50px;
+}
+
+.main-user-avatar img {
+    height: 100%;
+    padding: 7px;
+}
+
+.main-user-bar-icons {
+    display: flex;
+    align-items: center;
+}
+
+.main-user-bar-icons a {
+    margin-right: 15px;
+}
+
+.main-user-bar-icons a i {
+    color: #b1b1b1;
+}
+
+/* ************************ */
+
 .mute-notifications-alert-bar {
     height: 70px;
     background-color: #8edafc;
+    padding: 10px 15px;
+    display: flex;
+    align-items: center;
+}
+
+.mute-icon {
+    flex: 0 0 auto;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    background-color: #f2fbff;
+    display: flex;
+}
+
+.mute-icon i {
+    margin: auto;
+    color: #8edafc;
+}
+
+.mute-text {
+    margin-left: 10px;
+}
+
+.mute-text p {
+    font-weight: bold;
+    font-size: 12px;
+}
+
+.mute-text a {
+    color: #4f7485;
+    font-size: 11px;
 }
 
 .friends-search-bar {
     height: 40px;
     background-color: #fafafa;
+    padding: 5px;
+}
+
+.search-bar {
+    height: 100%;
+    width: 100%;
+    border: 1px solid #f5f5f5;
+    background-color: #fff;
+    border-radius: 100px;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+}
+
+.search-bar input[type="search"] {
+    border: none;
+    height: 100%;
+    width: 230px;
+}
+
+.search-bar input[placeholder] {
+    color: #c7c7c7;
+}
+
+.search-bar i {
+    color: #b1b1b1;
+    font-size: 12px;
+    padding: 0 7px;
 }
 
 .friends-container {
@@ -70,7 +162,7 @@
 
 /* RIGHT COLUMN */
 .right-column {
-    flex: 70%;
+    flex: 0 0 70%;
     display: flex;
     flex-direction: column;
 }
