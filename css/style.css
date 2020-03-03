@@ -16,24 +16,85 @@
     width: 100vw;
 }
 
-.container-top {
+.background-top {
     height: 20vh;
     background-color: #128C7E;
 }
 
-.container-bottom {
+.background-bottom {
     height: 80vh;
-    background-color: #f0f0f0;
+    background-color: #dadbd3;
 }
 
 .chat-container {
+    display: flex;
     height: 90%;
-    min-height: 500px;
+    min-height: 400px;
     width: 70%;
+    min-width: 1000px;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%,-50%);
     /* da eliminare */
-    background-color: black;
+    /* background-color: black; */
+}
+
+/* LEFT COLUMN */
+.left-column {
+    flex: 30%;
+    display: flex;
+    flex-direction: column;
+    border-right: 1px solid #d6d6d6;
+}
+
+.main-user-bar {
+    height: 50px;
+    background-color: #eaeaea;
+}
+
+.mute-notifications-alert-bar {
+    height: 70px;
+    background-color: #8edafc;
+}
+
+.friends-search-bar {
+    height: 40px;
+    background-color: #fafafa;
+}
+
+.friends-container {
+    height: calc(100% - 160px);
+    background-color: #fff;
+}
+
+/* RIGHT COLUMN */
+.right-column {
+    flex: 70%;
+    display: flex;
+    flex-direction: column;
+}
+
+.active-chat-container {
+    height: 100%;
+}
+
+.user-bar {
+    height: 50px;
+    background-color: #eaeaea;
+}
+
+.sended-messages-container {
+    height: calc(100% - 100px);
+}
+
+.sended-messages-container img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.write-message-bar {
+    height: 50px;
+    background-color: #f3eeea;
 }
