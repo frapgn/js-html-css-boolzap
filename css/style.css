@@ -92,7 +92,8 @@ body {
 .main-user-bar {
     display: flex;
     justify-content: space-between;
-    height: 50px;
+    align-items: center;
+    height: 60px;
     /* background-color: #eaeaea; */
     background-color: #111214;
 }
@@ -206,7 +207,7 @@ body {
 /* ********************* */
 
 .friends-list-container {
-    height: calc(100% - 160px);
+    height: calc(100% - 170px);
     background-color: #fff;
     overflow-y: auto;
     scrollbar-width: thin;
@@ -294,7 +295,7 @@ body {
 .active-chat-user-bar {
     display: flex;
     justify-content: space-between;
-    height: 50px;
+    height: 60px;
     background-color: #111214;
     /* background-color: #eaeaea; */
     /* box-shadow: 0 0 5px #000; */
@@ -347,7 +348,7 @@ body {
 
 
 .sended-messages-container {
-    height: calc(100% - 100px);
+    height: calc(100% - 110px);
 }
 
 .sended-messages-container img {
