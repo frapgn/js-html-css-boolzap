@@ -291,11 +291,60 @@ body {
     height: 100%;
 }
 
-.user-bar {
+.active-chat-user-bar {
+    display: flex;
+    justify-content: space-between;
     height: 50px;
     background-color: #111214;
     /* background-color: #eaeaea; */
+    /* box-shadow: 0 0 5px #000; */
 }
+
+.active-chat-user-info {
+    display: flex;
+    /* justify-content: space-between; */
+    align-items: center;
+    height: 100%;
+}
+
+.user-text-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.last-access {
+    font-size: 13px;
+    /* color: #b6b9bb; */
+    color: #828282;
+}
+
+.user-avatar {
+    width: 50px;
+    height: 50px;
+}
+
+.user-avatar img {
+    height: 100%;
+    padding: 7px;
+}
+
+.user-bar-icons {
+    display: flex;
+    align-items: center;
+}
+
+.user-bar-icons a {
+    margin-right: 15px;
+}
+
+.user-bar-icons a i {
+    /* color: #b1b1b1; */
+    color: #128C7E;
+}
+
+
+
+
 
 .sended-messages-container {
     height: calc(100% - 100px);
