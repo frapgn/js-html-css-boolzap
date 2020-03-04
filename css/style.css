@@ -94,18 +94,20 @@ body {
     justify-content: space-between;
     align-items: center;
     height: 60px;
+    padding: 10px;
     /* background-color: #eaeaea; */
     background-color: #111214;
 }
 
 .main-user-avatar {
     width: 50px;
-    height: 50px;
+    height: 100%;
+    /* padding: 7px 10px; */
 }
 
 .main-user-avatar img {
     height: 100%;
-    padding: 7px;
+    /* padding: 7px; */
 }
 
 .main-user-bar-icons {
@@ -195,7 +197,7 @@ body {
 }
 
 .search-bar input[placeholder] {
-    color: #c7c7c7;
+    color: #ffffff;
 }
 
 .search-bar i {
@@ -251,7 +253,6 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    /* height: 100%; */
     padding-left: 15px;
     height: 80%;
 }
@@ -297,13 +298,13 @@ body {
     justify-content: space-between;
     height: 60px;
     background-color: #111214;
+    padding: 10px;
     /* background-color: #eaeaea; */
     /* box-shadow: 0 0 5px #000; */
 }
 
 .active-chat-user-info {
     display: flex;
-    /* justify-content: space-between; */
     align-items: center;
     height: 100%;
 }
@@ -321,12 +322,11 @@ body {
 
 .user-avatar {
     width: 50px;
-    height: 50px;
+    height: 100%;
 }
 
 .user-avatar img {
     height: 100%;
-    padding: 7px;
 }
 
 .user-bar-icons {
@@ -343,12 +343,9 @@ body {
     color: #128C7E;
 }
 
-
-
-
-
+/* sended messages container */
 .sended-messages-container {
-    height: calc(100% - 110px);
+    height: calc(100% - 120px);
 }
 
 .sended-messages-container img {
@@ -357,7 +354,43 @@ body {
     object-fit: cover;
 }
 
+/* write message bar */
 .write-message-bar {
-    height: 50px;
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    height: 60px;
     background-color: #111214;
+}
+
+.emoji-choice i {
+    color: #f1f1f1;
+    font-size: 20px;
+}
+
+.write-message {
+    padding: 0 20px;
+    flex: 1 1 auto;
+}
+
+.write-message,
+.write-message input[type="text"] {
+    height: 100%;
+}
+
+.write-message input[type="text"] {
+    border: none;
+    border-radius: 50px;
+    width: 100%;
+    background-color: #3d3d3d;
+    padding: 0 20px;
+}
+
+.write-message input[placeholder] {
+    color: #fff;
+}
+
+.record-audio i {
+    color: #f1f1f1;
+    font-size: 20px;
 }
