@@ -418,7 +418,7 @@ body {
     align-self: flex-end;
     padding: 0 5px 2px 0;
     font-size: 12px;
-    color: #787878;
+    color: #a6a6a6;
 }
 
 .sent {
@@ -435,7 +435,7 @@ body {
     align-self: flex-end;
     padding: 0 5px 2px 0;
     font-size: 12px;
-    color: #787878;
+    color: #a6a6a6;
 }
 
 /* write message bar */
@@ -476,6 +476,10 @@ body {
     color: #fff;
 }
 
+.record-audio {
+    width: 20px;
+}
+
 .record-audio i {
     color: #f1f1f1;
     font-size: 20px;
@@ -484,6 +488,7 @@ body {
 
 .sent-msg {
     display: none;
+    width: 20px;
 }
 
 .sent-msg i {
