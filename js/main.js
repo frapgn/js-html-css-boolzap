@@ -5,7 +5,7 @@ var minutes = data.getMinutes();
 var currentTime = hours + ':' + minutes;
 console.log(currentTime);
 
-$('.record-audio').click(function() {
+$('.sent-msg').click(function() {
     // Invio messaggio
     var writeMsg = $('#write-msg').val();
     console.log(writeMsg);
@@ -23,6 +23,11 @@ $('.record-audio').click(function() {
         $(clonedReceived).find('.received-text').text('OK');
         $(clonedReceived).find('.received-time').text(currentTime);
         $('.history-messages-container').append(clonedReceived);
-    }, 2000);
+    }, 1000);
 
+})
+
+$('#write-msg').focus(function() {
+    $('.record-audio').hide();
+    $('.sent-msg').show();
 })

@@ -481,3 +481,13 @@ body {
     font-size: 20px;
     cursor: pointer;
 }
+
+.sent-msg {
+    display: none;
+}
+
+.sent-msg i {
+    color: #f1f1f1;
+    font-size: 20px;
+    cursor: pointer;
+}
