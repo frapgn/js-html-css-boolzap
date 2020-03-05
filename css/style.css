@@ -377,14 +377,18 @@ body {
     z-index: -1;
 } */
 
-.flex-row-sent {
+.templates-msgs {
+    display: none;
+}
+
+.row-sent {
     display: flex;
     margin-bottom: 8px;
     justify-content: flex-end;
     z-index: 1;
 }
 
-.flex-row-received {
+.row-received {
     display: flex;
     margin-bottom: 8px;
     z-index: 1;
@@ -475,4 +479,5 @@ body {
 .record-audio i {
     color: #f1f1f1;
     font-size: 20px;
+    cursor: pointer;
 }

@@ -239,22 +239,38 @@
                     <div class="history-messages-container">
                         <div class="overlay-history-messages-container"></div>
                         <!-- <img src="https://i.imgur.com/2nmRpTa.jpg" alt="WhatsApp Background"> -->
-                        <div class="flex-row-sent">
+                        <div class="row-sent">
                             <div class="sent msg-container">
                                 <div class="sent-text">Ciao, ti vedo diverso</div>
                                 <div class="sent-time">18:20</div>
                             </div>
                         </div>
-                        <div class="flex-row-received">
+                        <div class="row-received">
                             <div class="received msg-container">
                                 <div class="received-text">Ho cambiato sesso.</div>
                                 <div class="received-time">18:37</div>
                             </div>
                         </div>
-                        <div class="flex-row-sent">
+                        <div class="row-sent">
                             <div class="sent msg-container">
                                 <div class="sent-text">Wow. Allora domani se vuoi andiamo insieme a caccia. 21.00 in punto, ti voglio bello carico.</div>
                                 <div class="sent-time">18:58</div>
+                            </div>
+                        </div>
+
+                        <!-- TEMPLATE -->
+                        <div class="templates-msgs">
+                            <div class="row-received">
+                                <div class="received msg-container">
+                                    <div class="received-text"></div>
+                                    <div class="received-time">00:00</div>
+                                </div>
+                            </div>
+                            <div class="row-sent">
+                                <div class="sent msg-container">
+                                    <div class="sent-text"></div>
+                                    <div class="sent-time">00:00</div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -263,7 +279,7 @@
                             <i class="far fa-smile"></i>
                         </div>
                         <div class="write-message">
-                            <input type="text" placeholder="&nbsp;Scrivi un messaggio">
+                            <input id="write-msg" type="text" placeholder="&nbsp;Scrivi un messaggio">
                         </div>
                         <div class="record-audio">
                             <i class="fas fa-microphone"></i>
