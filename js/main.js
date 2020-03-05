@@ -17,6 +17,8 @@ $('#write-msg').keydown(function(event) {
         case 'Enter':
             sentMessage();
             randomReply();
+            $('.sent-msg').hide();
+            $('.record-audio').show();
             break;
         default:
 
@@ -35,8 +37,8 @@ $('#write-msg').keyup(function(event){
         $('.record-audio').hide();
         $('.sent-msg').show();
     } else {
-        $('.record-audio').show();
         $('.sent-msg').hide();
+        $('.record-audio').show();
     }
 });
 
