@@ -284,6 +284,7 @@ body {
     /* color: #b6b9bb; */
     color: #787878;
 }
+
 /* RIGHT COLUMN */
 .right-column {
     flex: 0 0 70%;
@@ -353,11 +354,15 @@ body {
     height: calc(100% - 120px);
     padding: 20px 50px;
     position: relative;
-    background-image: url('https://i.imgur.com/2nmRpTa.jpg');
+    background: url('https://i.imgur.com/2nmRpTa.jpg') rgba(0,0,0,0.5);
     background-size: cover;
+    background-blend-mode: multiply;
+    overflow: auto;
+    scrollbar-width: thin;
+    scrollbar-color: #128C7E #111214;
 }
 
-.overlay-history-messages-container {
+.overlay-history-messages-container { /* FIXME: l'overley segue lo scroll del container */
     position: absolute;
     top: 0;
     bottom: 0;
@@ -365,6 +370,7 @@ body {
     right: 0;
     background-color: rgba(0, 0, 0, 0.5);
 }
+
 /* .history-messages-container img {
     height: 100%;
     width: 100%;
