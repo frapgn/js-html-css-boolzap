@@ -3,7 +3,7 @@ var hours = data.getHours();
 var minutes = data.getMinutes();
 
 var currentTime = hours + ':' + minutes;
-console.log(currentTime);
+// console.log(currentTime);
 
 // Azione invio tramite icona
 $('.sent-msg').click(function() {
@@ -30,7 +30,17 @@ $('#write-msg').focus(function() {
 });
 
 // Filtro ricerca amici
-
+$('#friends-search-input').keyup(function(event){
+    var searchInputValue = $(this).val().toLowerCase();
+    console.log(searchInputValue);
+    $('#friends-list-container .friend-container').each(function() {
+        if($(this).find('.friend-name').text().toLowerCase().includes(searchInputValue)) {
+            $(this).show();
+        } else {
+            $(this).hide();
+        }
+    });
+});
 // FUNZIONI /////////////////////////////////////////////////////
 // Invio messaggio
 function sentMessage() {

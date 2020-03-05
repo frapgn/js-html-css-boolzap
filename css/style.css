@@ -210,7 +210,7 @@ body {
 
 /* ********************* */
 
-.friends-list-container {
+#friends-list-container {
     height: calc(100% - 170px);
     background-color: #fff;
     overflow-y: auto;
