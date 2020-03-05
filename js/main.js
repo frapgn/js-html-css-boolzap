@@ -24,9 +24,20 @@ $('#write-msg').keydown(function(event) {
 });
 
 // Focus sull'input Scrivi un messaggio --> Scompare icona microfono e compare icona invio
-$('#write-msg').focus(function() {
-    $('.record-audio').hide();
-    $('.sent-msg').show();
+// $('#write-msg').focus(function() {
+//     $('.record-audio').hide();
+//     $('.sent-msg').show();
+// });
+
+//
+$('#write-msg').keyup(function(event){
+    if($(this).val() != '') {
+        $('.record-audio').hide();
+        $('.sent-msg').show();
+    } else {
+        $('.record-audio').show();
+        $('.sent-msg').hide();
+    }
 });
 
 // Filtro ricerca amici
