@@ -10,6 +10,15 @@
     clear: both;
 }
 
+.hidden {
+    display: none;
+}
+/* ****** POLIGEN ***** */
+.polygen {
+    display: none;
+}
+/* ****** POLIGEN ***** */
+
 body {
     font-family: 'Roboto', sans-serif;
 }
@@ -212,7 +221,8 @@ body {
 
 #friends-list-container {
     height: calc(100% - 170px);
-    background-color: #fff;
+    /* background-color: #fff; */
+    background-color: #111214;
     overflow-y: auto;
     scrollbar-width: thin;
     scrollbar-color: #128C7E #111214;
@@ -226,8 +236,13 @@ body {
     width: 100%;
     background-color: #191919;
     border-bottom: 1px solid #000;
+    cursor: pointer;
 }
 
+.friend-container:hover,
+.friend-container.active {
+    background-color: #292828;
+}
 /* .friend-left {
     height: 100%;
     display: flex;
@@ -305,6 +320,7 @@ body {
     padding: 10px;
     /* background-color: #eaeaea; */
     box-shadow: 0px 2px 4px rgba(17, 18, 20, 0.86);
+    z-index: 2;
 }
 
 .active-chat-user-info {
@@ -352,7 +368,7 @@ body {
     display: flex;
     flex-direction: column;
     height: calc(100% - 120px);
-    padding: 20px 50px;
+    padding: 20px 50px 0px;
     position: relative;
     background: url('https://i.imgur.com/2nmRpTa.jpg') rgba(0,0,0,0.5);
     background-size: cover;
@@ -389,14 +405,14 @@ body {
 
 .row-sent {
     display: flex;
-    margin-bottom: 8px;
+    padding-bottom: 8px;
     justify-content: flex-end;
     z-index: 1;
 }
 
 .row-received {
     display: flex;
-    margin-bottom: 8px;
+    padding-bottom: 8px;
     z-index: 1;
 }
 
@@ -453,6 +469,7 @@ body {
     height: 60px;
     background-color: #111214;
     box-shadow: 0px -2px 4px rgba(17, 18, 20, 0.86);
+    z-index: 2;
 }
 
 .emoji-choice i {

@@ -12,6 +12,7 @@
          <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <link rel="stylesheet" href="fontawesome/css/all.css">
     <!-- <script src="https://kit.fontawesome.com/4a74a820a0.js" crossorigin="anonymous"></script> -->
+    <script type="text/javascript" src="http://www.polygen.org/polygen/remote/ita/prov.grm"/></script>
 </head>
 <body>
 
@@ -60,7 +61,7 @@
 
                 <div id="friends-list-container">
 
-                    <div class="friend-container">
+                    <div class="friend-container active" data-friend-id="1">
                         <div class="friend-avatar">
                             <img src="img/1.png" alt="">
                         </div>
@@ -72,7 +73,7 @@
                             <div class="chat-preview">Ok</div>
                         </div>
                     </div>
-                    <div class="friend-container">
+                    <div class="friend-container" data-friend-id="2">
                         <div class="friend-avatar">
                             <img src="img/2.png" alt="">
                         </div>
@@ -84,7 +85,7 @@
                             <div class="chat-preview">Sto male</div>
                         </div>
                     </div>
-                    <div class="friend-container">
+                    <div class="friend-container" data-friend-id="3">
                         <div class="friend-avatar">
                             <img src="img/3.png" alt="">
                         </div>
@@ -96,7 +97,7 @@
                             <div class="chat-preview">CI vediamo domani al solito posto</div>
                         </div>
                     </div>
-                    <div class="friend-container">
+                    <div class="friend-container" data-friend-id="4">
                         <div class="friend-avatar">
                             <img src="img/4.png" alt="">
                         </div>
@@ -108,7 +109,7 @@
                             <div class="chat-preview">Sisi siamo andati insieme</div>
                         </div>
                     </div>
-                    <div class="friend-container">
+                    <div class="friend-container" data-friend-id="5">
                         <div class="friend-avatar">
                             <img src="img/5.png" alt="">
                         </div>
@@ -209,19 +210,17 @@
             </div>
 
             <div class="right-column">
-                <div class="active-chat-container">
-
+                <!-- Active chats -->
+                <div class="active-chat-container visible" data-chat-id="1">
                     <div class="active-chat-user-bar">
                         <div class="active-chat-user-info">
                             <div class="user-avatar">
-                                <img src='img/5.png'>
+                                <img src='img/1.png'>
                             </div>
-
                             <div class="user-text-info">
-                                <div class="friend-name">Leonardo</div>
-                                <div class="last-access">Ultimo accesso oggi alle 18:37</div>
+                                <div class="friend-name">Rocco</div>
+                                <div class="last-access">Ultimo accesso oggi alle 07:27</div>
                             </div>
-
                         </div>
                         <div class="user-bar-icons">
                             <a href="#">
@@ -235,10 +234,171 @@
                             </a>
                         </div>
                     </div>
-
                     <div class="history-messages-container">
-                        <!-- <div class="overlay-history-messages-container"></div> -->
-                        <!-- <img src="https://i.imgur.com/2nmRpTa.jpg" alt="WhatsApp Background"> -->
+
+                    </div>
+                    <div class="write-message-bar">
+                        <div class="emoji-choice">
+                            <i class="far fa-smile"></i>
+                        </div>
+                        <div class="write-message">
+                            <input class="write-msg" type="text" placeholder="&nbsp;Scrivi un messaggio">
+                        </div>
+                        <div class="record-audio">
+                            <i class="fas fa-microphone"></i>
+                        </div>
+                        <div class="sent-msg">
+                            <i class="fas fa-paper-plane"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="active-chat-container hidden" data-chat-id="2">
+                    <div class="active-chat-user-bar">
+                        <div class="active-chat-user-info">
+                            <div class="user-avatar">
+                                <img src='img/2.png'>
+                            </div>
+                            <div class="user-text-info">
+                                <div class="friend-name">Ernesto</div>
+                                <div class="last-access">Ultimo accesso oggi alle 07:27</div>
+                            </div>
+                        </div>
+                        <div class="user-bar-icons">
+                            <a href="#">
+                                <i class="fas fa-paperclip"></i>
+                            </a>
+                            <a href="#">
+                                <i class="fas fa-search"></i>
+                            </a>
+                            <a href="#">
+                                <i class="fas fa-ellipsis-v"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="history-messages-container">
+
+                    </div>
+                    <div class="write-message-bar">
+                        <div class="emoji-choice">
+                            <i class="far fa-smile"></i>
+                        </div>
+                        <div class="write-message">
+                            <input class="write-msg" type="text" placeholder="&nbsp;Scrivi un messaggio">
+                        </div>
+                        <div class="record-audio">
+                            <i class="fas fa-microphone"></i>
+                        </div>
+                        <div class="sent-msg">
+                            <i class="fas fa-paper-plane"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="active-chat-container hidden" data-chat-id="3">
+                    <div class="active-chat-user-bar">
+                        <div class="active-chat-user-info">
+                            <div class="user-avatar">
+                                <img src='img/3.png'>
+                            </div>
+                            <div class="user-text-info">
+                                <div class="friend-name">Pablo Escobar</div>
+                                <div class="last-access">Ultimo accesso oggi alle 07:27</div>
+                            </div>
+                        </div>
+                        <div class="user-bar-icons">
+                            <a href="#">
+                                <i class="fas fa-paperclip"></i>
+                            </a>
+                            <a href="#">
+                                <i class="fas fa-search"></i>
+                            </a>
+                            <a href="#">
+                                <i class="fas fa-ellipsis-v"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="history-messages-container">
+
+                    </div>
+                    <div class="write-message-bar">
+                        <div class="emoji-choice">
+                            <i class="far fa-smile"></i>
+                        </div>
+                        <div class="write-message">
+                            <input class="write-msg" type="text" placeholder="&nbsp;Scrivi un messaggio">
+                        </div>
+                        <div class="record-audio">
+                            <i class="fas fa-microphone"></i>
+                        </div>
+                        <div class="sent-msg">
+                            <i class="fas fa-paper-plane"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="active-chat-container hidden" data-chat-id="4">
+                    <div class="active-chat-user-bar">
+                        <div class="active-chat-user-info">
+                            <div class="user-avatar">
+                                <img src='img/4.png'>
+                            </div>
+                            <div class="user-text-info">
+                                <div class="friend-name">Michelo</div>
+                                <div class="last-access">Ultimo accesso oggi alle 07:27</div>
+                            </div>
+                        </div>
+                        <div class="user-bar-icons">
+                            <a href="#">
+                                <i class="fas fa-paperclip"></i>
+                            </a>
+                            <a href="#">
+                                <i class="fas fa-search"></i>
+                            </a>
+                            <a href="#">
+                                <i class="fas fa-ellipsis-v"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="history-messages-container">
+
+                    </div>
+                    <div class="write-message-bar">
+                        <div class="emoji-choice">
+                            <i class="far fa-smile"></i>
+                        </div>
+                        <div class="write-message">
+                            <input class="write-msg" type="text" placeholder="&nbsp;Scrivi un messaggio">
+                        </div>
+                        <div class="record-audio">
+                            <i class="fas fa-microphone"></i>
+                        </div>
+                        <div class="sent-msg">
+                            <i class="fas fa-paper-plane"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="active-chat-container hidden" data-chat-id="5">
+                    <div class="active-chat-user-bar">
+                        <div class="active-chat-user-info">
+                            <div class="user-avatar">
+                                <img src='img/5.png'>
+                            </div>
+                            <div class="user-text-info">
+                                <div class="friend-name">Leonardo</div>
+                                <div class="last-access">Ultimo accesso oggi alle 18:37</div>
+                            </div>
+                        </div>
+                        <div class="user-bar-icons">
+                            <a href="#">
+                                <i class="fas fa-paperclip"></i>
+                            </a>
+                            <a href="#">
+                                <i class="fas fa-search"></i>
+                            </a>
+                            <a href="#">
+                                <i class="fas fa-ellipsis-v"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="history-messages-container">
                         <div class="row-sent">
                             <div class="sent msg-container">
                                 <div class="sent-text">Ciao, ti vedo diverso</div>
@@ -257,29 +417,13 @@
                                 <div class="sent-time">18:58</div>
                             </div>
                         </div>
-
-                        <!-- TEMPLATE -->
-                        <div class="templates-msgs">
-                            <div class="row-received">
-                                <div class="received msg-container">
-                                    <div class="received-text"></div>
-                                    <div class="received-time">00:00</div>
-                                </div>
-                            </div>
-                            <div class="row-sent">
-                                <div class="sent msg-container">
-                                    <div class="sent-text"></div>
-                                    <div class="sent-time">00:00</div>
-                                </div>
-                            </div>
-                        </div>
                     </div>
                     <div class="write-message-bar">
                         <div class="emoji-choice">
                             <i class="far fa-smile"></i>
                         </div>
                         <div class="write-message">
-                            <input id="write-msg" type="text" placeholder="&nbsp;Scrivi un messaggio">
+                            <input class="write-msg" type="text" placeholder="&nbsp;Scrivi un messaggio">
                         </div>
                         <div class="record-audio">
                             <i class="fas fa-microphone"></i>
@@ -288,13 +432,29 @@
                             <i class="fas fa-paper-plane"></i>
                         </div>
                     </div>
-
                 </div>
+                <!-- FIne active chats -->
             </div>
         </div>
 
     </div>
 
+    <!-- MESSAGES TEMPLATES -->
+    <div class="templates-msgs">
+        <div class="row-received">
+            <div class="received msg-container">
+                <div class="received-text"></div>
+                <div class="received-time">00:00</div>
+            </div>
+        </div>
+        <div class="row-sent">
+            <div class="sent msg-container">
+                <div class="sent-text"></div>
+                <div class="sent-time">00:00</div>
+            </div>
+        </div>
+    </div>
+    <!-- FINE MESSAGES TEMPLATES -->
     <script src="js/main.js" charset="utf-8"></script>
 </body>
 </html>
