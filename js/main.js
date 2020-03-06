@@ -12,14 +12,23 @@ $('.sent-msg').click(function() {
 });
 
 // Azione invio tramite tasto Enter
-$('.write-msg').keypress(function(event) {         // alla pressione del tasto enter
-     if(event.key == 'Enter') {
-         sentMessage();
-         randomReply();
-         $('.sent-msg').hide();
-         $('.record-audio').show();
-     }
+$(document).on('keypress', '.active-chat-container.visible .write-msg' ,function() {
+    if(event.key == 'Enter') {
+        sentMessage();
+        randomReply();
+        $('.sent-msg').hide();
+        $('.record-audio').show();
+    }
 });
+
+// $('.write-msg').keypress(function(event) {         // alla pressione del tasto enter
+//      if(event.key == 'Enter') {
+//          sentMessage();
+//          randomReply();
+//          $('.sent-msg').hide();
+//          $('.record-audio').show();
+//      }
+// });
 // $('.write-msg').keydown(function(event) {
 //     switch (event.key) {
 //         case 'Enter':
@@ -90,7 +99,13 @@ $('.friend-container').click(function(){
             $('.active-chat-container').addClass('hidden');
             $(this).removeClass('hidden');
             $(this).addClass('visible');
-
+        }
+        if($('.active-chat-container.visible .write-msg').val().trim() != '') {
+            $('.record-audio').hide();
+            $('.sent-msg').show();
+        } else {
+            $('.sent-msg').hide();
+            $('.record-audio').show();
         }
     });
 });
@@ -103,14 +118,14 @@ function scroll() {
 
 // Invio messaggio
 function sentMessage() {
-    var writeMsg = $('.write-msg').val();
+    var writeMsg = $('.active-chat-container.visible .write-msg').val();
     // console.log(writeMsg);
-    $('.write-msg').val('');
+    $('.active-chat-container.visible .write-msg').val('');
     var clonedSent = $('.templates-msgs .row-sent').clone();
     // console.log(clonedSent);
     $(clonedSent).find('.sent-text').text(writeMsg);
     $(clonedSent).find('.sent-time').text(currentTime);
-    $('.history-messages-container').append(clonedSent);
+    $('.active-chat-container.visible .history-messages-container').append(clonedSent);
     scroll();
 }
 
@@ -121,7 +136,7 @@ function randomReply() {
         console.log(clonedReceived);
         $(clonedReceived).find('.received-text').text(poligen);
         $(clonedReceived).find('.received-time').text(currentTime);
-        $('.history-messages-container').append(clonedReceived);
+        $('.active-chat-container.visible .history-messages-container').append(clonedReceived);
         scroll();
     }, 1000);
 }
