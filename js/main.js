@@ -1,7 +1,10 @@
 var data = new Date();
 var hours = data.getHours();
 var minutes = data.getMinutes();
-
+console.log(minutes);
+if (minutes < 10) {
+    minutes = '0' + minutes;
+}
 var currentTime = hours + ':' + minutes;
 // console.log(currentTime);
 
