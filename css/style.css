@@ -13,6 +13,7 @@
 .hidden {
     display: none;
 }
+
 /* ****** POLIGEN ***** */
 .polygen {
     display: none;
@@ -302,9 +303,36 @@ body {
 
 /* RIGHT COLUMN */
 .right-column {
+    position: relative;
     flex: 0 0 70%;
     display: flex;
     flex-direction: column;
+}
+
+.no-chat-background {
+    background-color: #111214;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.no-chat-background img {
+    height: 40%;
+    width: 40%;
+    object-fit: contain;
+}
+
+h1 {
+    font-weight: 500;
+    font-size: 80px;
+    color: #128c7e;
+    padding-top: 10px;
 }
 
 .active-chat-container {
