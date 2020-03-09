@@ -147,7 +147,13 @@ $(document).on('mouseenter', '.msg-container', function(){
 });
 
 $(document).on('mouseleave', '.msg-container', function(){
-    $(this).find('.msg-icon-options').addClass('hidden');
+    if ($(this).find('.msg-options-container').hasClass('hidden')) {
+        $(this).find('.msg-icon-options').addClass('hidden');
+    }
+});
+
+$(document).on('click', '.msg-icon-options', function(){
+    $(this).find('.msg-options-container').toggleClass('hidden');
 });
 // $('.msg-container').mouseenter(function(){
 //     $(this).find('.msg-icon-options').removeClass('hidden');
@@ -155,6 +161,9 @@ $(document).on('mouseleave', '.msg-container', function(){
 //     $(this).find('.msg-icon-options').addClass('hidden');
 // });
 
+$(document).on('click', '.delete-msg', function(){
+    $(this).parentsUntil('.history-messages-container').remove('.msg-row');
+});
 
 // FUNZIONI /////////////////////////////////////////////////////
 // Scroll

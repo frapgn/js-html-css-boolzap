@@ -431,6 +431,10 @@ h1 {
     display: none;
 }
 
+.msg-row {
+    
+}
+
 .row-sent {
     display: flex;
     padding-bottom: 8px;
