@@ -114,6 +114,15 @@ $('.friend-container').click(function(){
         $('.record-audio').show();
     }
 });
+
+// Menu a tendina opzioni messaggio
+$('.msg-container').mouseenter(function(){
+    $(this).find('.msg-icon-options').removeClass('hidden');
+}).mouseleave(function(){
+    $(this).find('.msg-icon-options').addClass('hidden');
+});
+
+
 // FUNZIONI /////////////////////////////////////////////////////
 // Scroll
 function scroll() {
