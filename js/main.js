@@ -1,7 +1,7 @@
 var data = new Date();
 var hours = data.getHours();
 var minutes = data.getMinutes();
-console.log(minutes);
+// console.log(minutes);
 if (minutes < 10) {
     minutes = '0' + minutes;
 }
@@ -95,22 +95,24 @@ $('.friend-container').click(function(){
         $(this).addClass('active');
     }
     var friendId = $(this).data('friendId');
+    console.log(friendId);
     $('.active-chat-container').each(function(){
         var chatId = $(this).data('chatId');
-        if ((friendId == chatId) && $('.active-chat-container').hasClass('hidden')) {
+        console.log(chatId);
+        if ((friendId == chatId) && $(this).hasClass('hidden')) {
             $('.active-chat-container').removeClass('visible');
             $('.active-chat-container').addClass('hidden');
             $(this).removeClass('hidden');
             $(this).addClass('visible');
         }
-        if($('.active-chat-container.visible .write-msg').val().trim() != '') {
-            $('.record-audio').hide();
-            $('.sent-msg').show();
-        } else {
-            $('.sent-msg').hide();
-            $('.record-audio').show();
-        }
     });
+    if($('.active-chat-container.visible .write-msg').val().trim() != '') {
+        $('.record-audio').hide();
+        $('.sent-msg').show();
+    } else {
+        $('.sent-msg').hide();
+        $('.record-audio').show();
+    }
 });
 // FUNZIONI /////////////////////////////////////////////////////
 // Scroll

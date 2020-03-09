@@ -435,13 +435,13 @@ h1 {
     display: flex;
     padding-bottom: 8px;
     justify-content: flex-end;
-    z-index: 1;
+    /* z-index: 1; */
 }
 
 .row-received {
     display: flex;
     padding-bottom: 8px;
-    z-index: 1;
+    /* z-index: 1; */
 }
 
 .msg-container {
@@ -452,6 +452,8 @@ h1 {
     max-width: 500px;
     width: auto;
     border-radius: 5px;
+    position: relative;
+    /* overflow: hidden; */
 }
 
 .received {
@@ -486,6 +488,42 @@ h1 {
     padding: 0 5px 2px 0;
     font-size: 12px;
     color: #a6a6a6;
+}
+
+i.msg-icon-options {
+    cursor: pointer;
+    position: absolute;
+    right: 0;
+    padding: 7px 10px 7px 30px;
+    /* height: 100%; */
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(7,94,84,0.8603641285615808) 50%, rgba(7,94,84,1) 100%);
+}
+
+.msg-options-container {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 30px;
+    position: absolute;
+    right: 5px;
+    bottom: -130px;
+    padding: 15px 0;
+    background-color: #3d3d3d;
+    z-index: 1;
+    width: 180px;
+    border-radius: 5px;
+    color: #f1f1f1;
+}
+
+.msg-options-container div {
+    width: auto;
+    padding: 0 20px;
+}
+
+.msg-options-container div:hover {
+    background-color: #333333;
 }
 
 /* write message bar */
