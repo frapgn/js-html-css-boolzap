@@ -89,7 +89,7 @@ $('#friends-search-input').keyup(function(event){
 });
 
 // Collego lista amici alla chat
-$('.friend-container').click(function(){
+$(document).on('click', '.friend-container', function(){
     if (!$(this).hasClass('active')) {
         $('.friend-container').removeClass('active');
         $(this).addClass('active');
@@ -115,12 +115,45 @@ $('.friend-container').click(function(){
     }
 });
 
+// $('.friend-container').click(function(){
+//     if (!$(this).hasClass('active')) {
+//         $('.friend-container').removeClass('active');
+//         $(this).addClass('active');
+//     }
+//     var friendId = $(this).data('friendId');
+//     console.log(friendId);
+//     $('.active-chat-container').each(function(){
+//         var chatId = $(this).data('chatId');
+//         console.log(chatId);
+//         if ((friendId == chatId) && $(this).hasClass('hidden')) {
+//             $('.active-chat-container').removeClass('visible');
+//             $('.active-chat-container').addClass('hidden');
+//             $(this).removeClass('hidden');
+//             $(this).addClass('visible');
+//         }
+//     });
+//     if($('.active-chat-container.visible .write-msg').val().trim() != '') {
+//         $('.record-audio').hide();
+//         $('.sent-msg').show();
+//     } else {
+//         $('.sent-msg').hide();
+//         $('.record-audio').show();
+//     }
+// });
+
 // Menu a tendina opzioni messaggio
-$('.msg-container').mouseenter(function(){
+$(document).on('mouseenter', '.msg-container', function(){
     $(this).find('.msg-icon-options').removeClass('hidden');
-}).mouseleave(function(){
+});
+
+$(document).on('mouseleave', '.msg-container', function(){
     $(this).find('.msg-icon-options').addClass('hidden');
 });
+// $('.msg-container').mouseenter(function(){
+//     $(this).find('.msg-icon-options').removeClass('hidden');
+// }).mouseleave(function(){
+//     $(this).find('.msg-icon-options').addClass('hidden');
+// });
 
 
 // FUNZIONI /////////////////////////////////////////////////////
