@@ -10,9 +10,10 @@
     <link rel="shortcut icon" href="img/favicon.png">
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,500&display=swap" rel="stylesheet">
     <!-- <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script> -->
-         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <!-- <script src="https://kit.fontawesome.com/4a74a820a0.js" crossorigin="anonymous"></script> -->
     <script type="text/javascript" src="http://www.polygen.org/polygen/remote/ita/prov.grm"/></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.3/handlebars.min.js" integrity="sha256-/PJBs6QWvXijOFIX04kZpLb6ZtSQckdOIavLWKKOgXU=" crossorigin="anonymous"></script>
 </head>
 <body>
 
@@ -465,11 +466,12 @@
     </div>
 
     <!-- MESSAGES TEMPLATES -->
-    <div class="templates-msgs">
+    <!-- <div class="templates-msgs"> -->
+    <script id="received-template" type="text/x-handlebars-template">
         <div class="row-received msg-row">
             <div class="received msg-container">
-                <div class="received-text">MESSAGGIO</div>
-                <div class="received-time">00:00</div>
+                <div class="received-text">{{receivedText}}</div>
+                <div class="msg-time">{{msgTime}}</div>
                 <i class="msg-icon-options msg-icon-options-received hidden fas fa-chevron-down">
                     <div class="msg-options-container hidden">
                         <div class="delete-msg">Elimina messaggio</div>
@@ -479,10 +481,13 @@
                 </i>
             </div>
         </div>
+    </script>
+
+    <script id="sent-template" type="text/x-handlebars-template">
         <div class="row-sent msg-row">
             <div class="sent msg-container">
-                <div class="sent-text"></div>
-                <div class="sent-time">00:00</div>
+                <div class="sent-text">{{sentText}}</div>
+                <div class="msg-time">{{msgTime}}</div>
                 <i class="msg-icon-options msg-icon-options-sent hidden fas fa-chevron-down">
                     <div class="msg-options-container hidden">
                         <div class="delete-msg">Elimina messaggio</div>
@@ -492,7 +497,8 @@
                 </i>
             </div>
         </div>
-    </div>
+    </script>
+    <!-- </div> -->
     <!-- FINE MESSAGES TEMPLATES -->
     <script src="js/main.js" charset="utf-8"></script>
 </body>

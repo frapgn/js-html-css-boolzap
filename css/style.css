@@ -432,7 +432,7 @@ h1 {
 }
 
 .msg-row {
-    
+
 }
 
 .row-sent {
@@ -470,13 +470,6 @@ h1 {
     font-size: 14px;
 }
 
-.received-time {
-    align-self: flex-end;
-    padding: 0 5px 2px 0;
-    font-size: 12px;
-    color: #a6a6a6;
-}
-
 .sent {
     background-color: #075E54;
 }
@@ -487,12 +480,19 @@ h1 {
     font-size: 14px;
 }
 
-.sent-time {
+.msg-time {
     align-self: flex-end;
     padding: 0 5px 2px 0;
     font-size: 12px;
     color: #a6a6a6;
 }
+
+/* .sent-time {
+    align-self: flex-end;
+    padding: 0 5px 2px 0;
+    font-size: 12px;
+    color: #a6a6a6;
+} */
 
 i.msg-icon-options {
     cursor: pointer;
