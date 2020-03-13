@@ -464,7 +464,7 @@ h1 {
     background-color: #3d3d3d;
 }
 
-.received-text {
+.msg-text {
     padding: 5px 30px 5px 10px;
     color: #f1f1f1;
     font-size: 14px;
@@ -474,11 +474,11 @@ h1 {
     background-color: #075E54;
 }
 
-.sent-text {
+/* .sent-text {
     padding: 5px 30px 5px 10px;
     color: #f1f1f1;
     font-size: 14px;
-}
+} */
 
 .msg-time {
     align-self: flex-end;

@@ -67,6 +67,9 @@ $('#friends-search-input').keyup(function(event){
 });
 
 // "Database" amici
+var source = $('#db-message-template').html();
+var template = Handlebars.compile(source);
+
 var friendsDB = {
     nc1: {
         name: 'Rocco',
@@ -139,14 +142,16 @@ for (var nChat in friendsDB) {
     // console.log(nChat);
     // console.log(friendsDB[nChat]);
     chatNumber = nChat[2];
-    var friendName = friendsDB[nChat].name;
+    // var friendName = friendsDB[nChat].name;
     var chatMessages = friendsDB[nChat].messages;
 
     for (var i = 0; i < chatMessages.length; i++) {
         var textMessage = chatMessages[i].text;
         var msgDirection = chatMessages[i].direction;
 
-        var chatSelector = $('.active-chat-container[data-chat-id="' + chatNumber + '"]');
+        var chatSelector = $('.active-chat-container[data-chat-id="' + chatNumber + '"] .history-messages-container');
+
+        sentDBMessage(textMessage, msgDirection, chatSelector);
     }
 
 }
@@ -203,7 +208,7 @@ $(document).on('click', '.delete-msg', function(){
 function scroll() {
     var pixelScroll = $('.history-messages-container').height();
     $('.history-messages-container').scrollTop(pixelScroll);
-}
+};
 
 // Handlebars sent template
 var sentSource = $('#sent-template').html();
@@ -221,21 +226,7 @@ function sentMessage() {
     var sentHTML = sentTemplate(sentMsg);
     $('.active-chat-container.visible .history-messages-container').append(sentHTML);
     scroll();
-}
-
-function sentDBMessage(direction) {
-    var writeMsg = $('.active-chat-container.visible .write-msg').val();
-    $('.active-chat-container.visible .write-msg').val('');
-
-    var sentMsg = {
-        sentText: writeMsg,
-        msgTime: currentTime
-    };
-
-    var sentHTML = sentTemplate(sentMsg);
-    $('.active-chat-container.visible .history-messages-container').append(sentHTML);
-    scroll();
-}
+};
 
 // Handlebars received template
 var receivedSource = $('#received-template').html();
@@ -244,17 +235,31 @@ var receivedTemplate = Handlebars.compile(receivedSource);
 function randomReply() {
     setTimeout(function() {
 
-        receivedMsg = {
+        var receivedMsg = {
             receivedText: poligen,
             msgTime: currentTime
         };
 
-        receivedHTML = receivedTemplate(receivedMsg);
+        var receivedHTML = receivedTemplate(receivedMsg);
         $('.active-chat-container.visible .history-messages-container').append(receivedHTML);
         scroll();
     }, 1000);
-}
+};
 
+// sent messages from friendsDB
+
+
+function sentDBMessage(textMessage, msgDirection, chatSelector) {
+    var message = {
+        text: textMessage,
+        direction: msgDirection,
+        time: currentTime
+    };
+    var html = template(message);
+    $(chatSelector).append(html);
+
+    scroll();
+};
 // Invio messaggio
 // function sentMessage() {
 //     var writeMsg = $('.active-chat-container.visible .write-msg').val();

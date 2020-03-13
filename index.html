@@ -406,8 +406,8 @@
                     <div class="history-messages-container">
                         <div class="row-sent msg-row">
                             <div class="sent msg-container">
-                                <div class="sent-text">Ciao, ti vedo diverso</div>
-                                <div class="sent-time">18:20</div>
+                                <div class="msg-text">Ciao, ti vedo diverso</div>
+                                <div class="msg-time">18:20</div>
                                 <i class="msg-icon-options msg-icon-options-sent hidden fas fa-chevron-down">
                                     <div class="msg-options-container hidden">
                                         <div class="delete-msg">Elimina messaggio</div>
@@ -419,8 +419,8 @@
                         </div>
                         <div class="row-received msg-row">
                             <div class="received msg-container">
-                                <div class="received-text">Ho cambiato sesso.</div>
-                                <div class="received-time">18:37</div>
+                                <div class="msg-text">Ho cambiato sesso.</div>
+                                <div class="msg-time">18:37</div>
                                 <i class="msg-icon-options msg-icon-options-received hidden fas fa-chevron-down">
                                     <div class="msg-options-container hidden">
                                         <div class="delete-msg">Elimina messaggio</div>
@@ -432,8 +432,8 @@
                         </div>
                         <div class="row-sent msg-row">
                             <div class="sent msg-container">
-                                <div class="sent-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</div>
-                                <div class="sent-time">18:58</div>
+                                <div class="msg-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</div>
+                                <div class="msg-time">18:58</div>
                                 <i class="msg-icon-options msg-icon-options-sent hidden fas fa-chevron-down">
                                     <div class="msg-options-container hidden">
                                         <div class="delete-msg">Elimina messaggio</div>
@@ -471,7 +471,7 @@
     <script id="received-template" type="text/x-handlebars-template">
         <div class="row-received msg-row">
             <div class="received msg-container">
-                <div class="received-text">{{receivedText}}</div>
+                <div class="msg-text">{{receivedText}}</div>
                 <div class="msg-time">{{msgTime}}</div>
                 <i class="msg-icon-options msg-icon-options-received hidden fas fa-chevron-down">
                     <div class="msg-options-container hidden">
@@ -487,7 +487,7 @@
     <script id="sent-template" type="text/x-handlebars-template">
         <div class="row-sent msg-row">
             <div class="sent msg-container">
-                <div class="sent-text">{{sentText}}</div>
+                <div class="msg-text">{{sentText}}</div>
                 <div class="msg-time">{{msgTime}}</div>
                 <i class="msg-icon-options msg-icon-options-sent hidden fas fa-chevron-down">
                     <div class="msg-options-container hidden">
@@ -501,6 +501,24 @@
     </script>
     <!-- </div> -->
     <!-- END MESSAGES TEMPLATES -->
+
+    <!-- DB MESSAGE TEMPLATE -->
+    <script id="db-message-template" type="text/x-handlebars-template">
+        <div class="row-{{direction}} msg-row">
+            <div class="{{direction}} msg-container">
+                <div class="msg-text">{{text}}</div>
+                <div class="msg-time">{{time}}</div>
+                <i class="msg-icon-options msg-icon-options-{{direction}} hidden fas fa-chevron-down">
+                    <div class="msg-options-container hidden">
+                        <div class="delete-msg">Elimina messaggio</div>
+                        <div>Inoltra messaggio</div>
+                        <div>Aggiungi ai preferiti</div>
+                    </div>
+                </i>
+            </div>
+        </div>
+    </script>
+    <!-- END DB MESSAGE TEMPLATE -->
 
     <!-- FRIEND TEMPLATE -->
     <div class="friend-container" data-friend-id="{{friendID}}">
