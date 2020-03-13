@@ -465,6 +465,7 @@
 
     </div>
 
+    <!-- TEMPLATES -->
     <!-- MESSAGES TEMPLATES -->
     <!-- <div class="templates-msgs"> -->
     <script id="received-template" type="text/x-handlebars-template">
@@ -499,7 +500,24 @@
         </div>
     </script>
     <!-- </div> -->
-    <!-- FINE MESSAGES TEMPLATES -->
+    <!-- END MESSAGES TEMPLATES -->
+
+    <!-- FRIEND TEMPLATE -->
+    <div class="friend-container" data-friend-id="{{friendID}}">
+        <div class="friend-avatar">
+            <img src="img/1.png" alt="">
+        </div>
+        <div class="friend-info">
+            <div class="name-and-time-row">
+                <div class="friend-name">{{nome}}</div>
+                <div class="last-msg-time">18:37</div>
+            </div>
+            <div class="chat-preview">Ok</div>
+        </div>
+    </div>
+    <!-- END FRIEND TEMPLATE -->
+
+    <!-- TEMPLATES -->
     <script src="js/main.js" charset="utf-8"></script>
 </body>
 </html>

@@ -66,6 +66,91 @@ $('#friends-search-input').keyup(function(event){
     });
 });
 
+// "Database" amici
+var friendsDB = {
+    nc1: {
+        name: 'Rocco',
+        messages: [
+            {
+                text: 'Ciao mi chiamo Rocco e mi piacciono le patatine',
+                direction: 'received'
+            },
+            {
+                text: 'Con o senza salsa?',
+                direction: 'sent'
+            }
+        ]
+    },
+    nc2: {
+        name: 'Ernesto',
+        messages: [
+            {
+                text: 'Ciao mi chiamo Ernesto e non mi piace stare all\'esterno',
+                direction: 'received'
+            },
+            {
+                text: 'Piacere anagramma di Esterno',
+                direction: 'sent'
+            }
+        ]
+    },
+    nc3: {
+        name: 'Pablo Escobar',
+        messages: [
+            {
+                text: 'Io esco, vado al Bar',
+                direction: 'sent'
+            },
+            {
+                text: 'Ti raggiungo appena finisco di tagliere questo cadavere',
+                direction: 'received'
+            }
+        ]
+    },
+    nc4: {
+        name: 'Michelo',
+        messages: [
+            {
+                text: 'Sono bipolare',
+                direction: 'received'
+            },
+            {
+                text: 'Ok',
+                direction: 'sent'
+            }
+        ]
+    },
+    nc5: {
+        name: 'Leonardo',
+        messages: [
+            {
+                text: 'É stata una giornata intensa',
+                direction: 'sent'
+            },
+            {
+                text: 'Ma divertente',
+                direction: 'received'
+            }
+        ]
+    }
+};
+
+for (var nChat in friendsDB) {
+    // console.log(nChat);
+    // console.log(friendsDB[nChat]);
+    chatNumber = nChat[2];
+    var friendName = friendsDB[nChat].name;
+    var chatMessages = friendsDB[nChat].messages;
+
+    for (var i = 0; i < chatMessages.length; i++) {
+        var textMessage = chatMessages[i].text;
+        var msgDirection = chatMessages[i].direction;
+
+        var chatSelector = $('.active-chat-container[data-chat-id="' + chatNumber + '"]');
+    }
+
+}
+
 // Collego lista amici alla chat
 $(document).on('click', '.friend-container', function(){
     if (!$(this).hasClass('active')) {
@@ -125,6 +210,20 @@ var sentSource = $('#sent-template').html();
 var sentTemplate = Handlebars.compile(sentSource);
 
 function sentMessage() {
+    var writeMsg = $('.active-chat-container.visible .write-msg').val();
+    $('.active-chat-container.visible .write-msg').val('');
+
+    var sentMsg = {
+        sentText: writeMsg,
+        msgTime: currentTime
+    };
+
+    var sentHTML = sentTemplate(sentMsg);
+    $('.active-chat-container.visible .history-messages-container').append(sentHTML);
+    scroll();
+}
+
+function sentDBMessage(direction) {
     var writeMsg = $('.active-chat-container.visible .write-msg').val();
     $('.active-chat-container.visible .write-msg').val('');
 
