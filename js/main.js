@@ -8,10 +8,15 @@ if (minutes < 10) {
 var currentTime = hours + ':' + minutes;
 
 // Azione invio tramite icona
-$('.sent-msg').click(function() {
+$('.right-column').on('click', '.sent-msg', function(){
     sentMessage();
     randomReply();
 });
+
+// $('.sent-msg').click(function() {
+//     sentMessage();
+//     randomReply();
+// });
 
 // Azione invio tramite tasto Enter
 $(document).on('keypress', '.active-chat-container.visible .write-msg' ,function() {
@@ -43,16 +48,6 @@ $(document).on('keyup', '.active-chat-container.visible .write-msg' ,function() 
     }
 });
 
-// $('.active-chat-container.visible .write-msg').keyup(function(event){
-//     if($(this).val().trim() != '') {
-//         $('.record-audio').hide();
-//         $('.sent-msg').show();
-//     } else {
-//         $('.sent-msg').hide();
-//         $('.record-audio').show();
-//     }
-// });
-
 // Filtro ricerca amici
 $('#friends-search-input').keyup(function(event){
     var searchInputValue = $(this).val().toLowerCase();
@@ -76,6 +71,11 @@ var dbMsgTemplate = Handlebars.compile(dbMsgTemplateSrc);
 var friendInListSrc = $('#friend-in-list-template').html();
 var friendInListTemlpate = Handlebars.compile(friendInListSrc);
 // end friend in list template
+
+// active chat template
+var activeChatSrc = $('#active-chat-template').html();
+var activeChatTemplate = Handlebars.compile(activeChatSrc);
+// end active chat template
 
 // "Database" amici
 var friendsDB = {
@@ -173,10 +173,15 @@ for (var nChat in friendsDB) {
     friendInfo = {
         friendName: friendsDB[nChat].name,
         friendID: chatNumber,
+        chatID: chatNumber,
         friendAvatar: friendsDB[nChat].avatar
     }
     friendInListTemlpateHTML = friendInListTemlpate(friendInfo);
     $('#friends-list-container').append(friendInListTemlpateHTML);
+
+    //creo chat corrispondente
+    activeChatTemplateHTML = activeChatTemplate(friendInfo);
+    $('.right-column').append(activeChatTemplateHTML);
 
     var chatMessages = friendsDB[nChat].messages;
 
