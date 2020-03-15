@@ -62,7 +62,7 @@
 
                 <div id="friends-list-container">
 
-                    <div class="friend-container" data-friend-id="1">
+                    <!-- <div class="friend-container" data-friend-id="1">
                         <div class="friend-avatar">
                             <img src="img/1.png" alt="">
                         </div>
@@ -205,7 +205,7 @@
                             </div>
                             <div class="chat-preview">Mi dicono che sono strano</div>
                         </div>
-                    </div>
+                    </div> -->
 
                 </div>
             </div>
@@ -521,18 +521,20 @@
     <!-- END DB MESSAGE TEMPLATE -->
 
     <!-- FRIEND TEMPLATE -->
-    <div class="friend-container" data-friend-id="{{friendID}}">
-        <div class="friend-avatar">
-            <img src="img/1.png" alt="">
-        </div>
-        <div class="friend-info">
-            <div class="name-and-time-row">
-                <div class="friend-name">{{nome}}</div>
-                <div class="last-msg-time">18:37</div>
+    <script id="friend-in-list-template" type="text/x-handlebars-template">
+        <div class="friend-container" data-friend-id="{{friendID}}">
+            <div class="friend-avatar">
+                <img src={{friendAvatar}} alt="">
             </div>
-            <div class="chat-preview">Ok</div>
+            <div class="friend-info">
+                <div class="name-and-time-row">
+                    <div class="friend-name">{{friendName}}</div>
+                    <div class="last-msg-time">18:37</div>
+                </div>
+                <div class="chat-preview">Ok</div>
+            </div>
         </div>
-    </div>
+    </script>
     <!-- END FRIEND TEMPLATE -->
 
     <!-- TEMPLATES -->

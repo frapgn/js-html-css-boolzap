@@ -66,13 +66,22 @@ $('#friends-search-input').keyup(function(event){
     });
 });
 
-// "Database" amici
-var source = $('#db-message-template').html();
-var template = Handlebars.compile(source);
 
+// db message template
+var dbMsgTemplateSrc = $('#db-message-template').html();
+var dbMsgTemplate = Handlebars.compile(dbMsgTemplateSrc);
+// end db message template
+
+// friend in list template
+var friendInListSrc = $('#friend-in-list-template').html();
+var friendInListTemlpate = Handlebars.compile(friendInListSrc);
+// end friend in list template
+
+// "Database" amici
 var friendsDB = {
     nc1: {
         name: 'Rocco',
+        avatar: "img/1.png",
         messages: [
             {
                 text: 'Ciao mi chiamo Rocco e mi piacciono le patatine',
@@ -86,6 +95,7 @@ var friendsDB = {
     },
     nc2: {
         name: 'Ernesto',
+        avatar: "img/2.png",
         messages: [
             {
                 text: 'Ciao mi chiamo Ernesto e non mi piace stare all\'esterno',
@@ -99,6 +109,7 @@ var friendsDB = {
     },
     nc3: {
         name: 'Pablo Escobar',
+        avatar: "img/3.png",
         messages: [
             {
                 text: 'Io esco, vado al Bar',
@@ -112,6 +123,7 @@ var friendsDB = {
     },
     nc4: {
         name: 'Michelo',
+        avatar: "img/4.png",
         messages: [
             {
                 text: 'Sono bipolare',
@@ -125,6 +137,7 @@ var friendsDB = {
     },
     nc5: {
         name: 'Leonardo',
+        avatar: "img/5.png",
         messages: [
             {
                 text: 'É stata una giornata intensa',
@@ -138,11 +151,33 @@ var friendsDB = {
     }
 };
 
+// sent messages from friendsDB
+function sentDBMessage(textMessage, msgDirection, chatSelector) {
+    var message = {
+        text: textMessage,
+        direction: msgDirection,
+        time: currentTime
+    };
+    var dbMsgTemplateHTML = dbMsgTemplate(message);
+    $(chatSelector).append(dbMsgTemplateHTML);
+
+    scroll();
+};
+
 for (var nChat in friendsDB) {
     // console.log(nChat);
     // console.log(friendsDB[nChat]);
     chatNumber = nChat[2];
-    // var friendName = friendsDB[nChat].name;
+
+    // Creo html lista amici
+    friendInfo = {
+        friendName: friendsDB[nChat].name,
+        friendID: chatNumber,
+        friendAvatar: friendsDB[nChat].avatar
+    }
+    friendInListTemlpateHTML = friendInListTemlpate(friendInfo);
+    $('#friends-list-container').append(friendInListTemlpateHTML);
+
     var chatMessages = friendsDB[nChat].messages;
 
     for (var i = 0; i < chatMessages.length; i++) {
@@ -153,7 +188,6 @@ for (var nChat in friendsDB) {
 
         sentDBMessage(textMessage, msgDirection, chatSelector);
     }
-
 }
 
 // Collego lista amici alla chat
@@ -246,20 +280,6 @@ function randomReply() {
     }, 1000);
 };
 
-// sent messages from friendsDB
-
-
-function sentDBMessage(textMessage, msgDirection, chatSelector) {
-    var message = {
-        text: textMessage,
-        direction: msgDirection,
-        time: currentTime
-    };
-    var html = template(message);
-    $(chatSelector).append(html);
-
-    scroll();
-};
 // Invio messaggio
 // function sentMessage() {
 //     var writeMsg = $('.active-chat-container.visible .write-msg').val();
