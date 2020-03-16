@@ -148,6 +148,48 @@ var friendsDB = {
                 direction: 'received'
             }
         ]
+    },
+    nc6: {
+        name: 'Walker T.R.',
+        avatar: "img/6.png",
+        messages: [
+            {
+                text: 'Ho imparato il calcio volante',
+                direction: 'sent'
+            },
+            {
+                text: 'Che paura',
+                direction: 'received'
+            }
+        ]
+    },
+    nc7: {
+        name: 'Rachele',
+        avatar: "img/7.png",
+        messages: [
+            {
+                text: 'Stasera da te?',
+                direction: 'sent'
+            },
+            {
+                text: 'Ho già installato i pannelli fonoassorbenti',
+                direction: 'received'
+            }
+        ]
+    },
+    nc8: {
+        name: 'Avvocato',
+        avatar: "img/8.png",
+        messages: [
+            {
+                text: 'Sei un incompetente',
+                direction: 'sent'
+            },
+            {
+                text: 'Ero ubriaco...',
+                direction: 'received'
+            }
+        ]
     }
 };
 
