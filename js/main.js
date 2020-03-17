@@ -283,6 +283,8 @@ $(document).on('click', '.delete-msg', function(){
     $(this).parentsUntil('.history-messages-container').remove('.msg-row');
 });
 
+// Chiudi menu a tendina col click all'infuori di sesso
+
 
 // FUNZIONI /////////////////////////////////////////////////////
 // Scroll
