@@ -51,7 +51,7 @@ $(document).on('keyup', '.active-chat-container.visible .write-msg' ,function() 
 // Filtro ricerca amici
 $('#friends-search-input').keyup(function(event){
     var searchInputValue = $(this).val().toLowerCase();
-    console.log(searchInputValue);
+    // console.log(searchInputValue);
     $('#friends-list-container .friend-container').each(function() {
         if($(this).find('.friend-name').text().toLowerCase().includes(searchInputValue)) {
             $(this).show();
@@ -244,10 +244,10 @@ $(document).on('click', '.friend-container', function(){
         $(this).addClass('active');
     }
     var friendId = $(this).data('friendId');
-    console.log(friendId);
+    // console.log(friendId);
     $('.active-chat-container').each(function(){
         var chatId = $(this).data('chatId');
-        console.log(chatId);
+        // console.log(chatId);
         if ((friendId == chatId) && $(this).hasClass('hidden')) {
             $('.active-chat-container').removeClass('visible');
             $('.active-chat-container').addClass('hidden');
@@ -311,6 +311,10 @@ function sentMessage() {
     scroll();
 };
 
+// Aforisma random
+// console.log(aforismi.length);
+
+
 // Handlebars received template
 var receivedSource = $('#received-template').html();
 var receivedTemplate = Handlebars.compile(receivedSource);
@@ -318,8 +322,10 @@ var receivedTemplate = Handlebars.compile(receivedSource);
 function randomReply() {
     setTimeout(function() {
 
+        var aforismaRandom = aforismi[getRandomInt(0, aforismi.length)]
+
         var receivedMsg = {
-            receivedText: poligen,
+            receivedText: aforismaRandom,
             msgTime: currentTime
         };
 
@@ -329,6 +335,11 @@ function randomReply() {
     }, 1000);
 };
 
+function getRandomInt(min, max) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min)) + min; //Il max è escluso e il min è incluso
+}
 // Invio messaggio
 // function sentMessage() {
 //     var writeMsg = $('.active-chat-container.visible .write-msg').val();
